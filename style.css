@@ -1,0 +1,20 @@
+html,
+body {
+	height: 100%;
+    background-color: #111111;
+    overflow: hidden;
+}
+
+body {
+	margin: 0;
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+    text-decoration: underline;
+}

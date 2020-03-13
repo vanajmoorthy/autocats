@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.0/dist/ml5.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="rdp.js"></script>
+    <script src="draw.js"></script>
+    <title>autocats</title>
+</head>
+
+<body>
+    <h1>AUTOCATS</h1>
+    <!-- <select onchange="preload()" id="type">
+        <option value="truck">truck</option>
+        <option value="crab">crab</option>
+        <option value="octopus">octopus</option>
+        <option value="face">face</option>
+        <option value="bird">bird</option>
+        <option value="flamingo">flamingo</option>
+        <option value="the_mona_lisa">the mona lisa</option>
+        <option value="cruise_ship">cruise ship</option>
+        <option value="pineapple">pineapple</option>
+        <option value="mosquito">mosquito</option>
+        <option value="bicycle">bicycle</option>
+        <option value="angel">angel</option>
+        <option value="yoga">yoga</option>
+        <option value="garden">garden</option>
+        <option value="windmill">windmill</option>
+        <option value="pig">pig</option>
+        <option value="butterfly">butterfly</option>
+        <option value="spider">spider</option>
+        <option value="cat">cat</option>
+        <option value="floweryoga">floweryoga</option>
+        <option value="rain">rain</option>
+        <option value="peas">peas</option>
+        <option value="hedgehog">hedgehog</option>
+        <option value="duck">duck</option>
+        <option value="speedboat">speedboat</option>
+        <option value="beeflower">beeflower</option>
+        <option value="lion">lion</option>
+        <option value="diving_board">diving board</option>
+        <option value="bus">bus</option>
+        <option value="ant">ant</option>
+        <option value="backpack">backpack</option>
+        <option value="parrot">parrot</option>
+        <option value="toothpaste">toothpaste</option>
+        <option value="basket">basket</option>
+        <option value="swan">swan</option>
+        <option value="toothbrush">toothbrush</option>
+        <option value="radio">radio</option>
+        <option value="bridge">bridge</option>
+        <option value="trombone">trombone</option>
+        <option value="flower">flower</option>
+        <option value="calendar">calendar</option>
+        <option value="firetruck">firetruck</option>
+        <option value="pig">pig</option>
+        <option value="postcard">postcard</option>
+        <option value="catpig">catpig</option>
+        <option value="tiger">tiger</option>
+        <option value="sea_turtle">sea turtle</option>
+        <option value="scorpion">scorpion</option>
+        <option value="palm_tree">palm tree</option>
+        <option value="couch">couch</option>
+        <option value="swing_set">swing set</option>
+        <option value="elephantpig">elephantpig</option>
+        <option value="skull">skull</option>
+        <option value="antyoga">antyoga</option>
+        <option value="strawberry">strawberry</option>
+        <option value="cactus">cactus</option>
+        <option value="snail">snail</option>
+        <option value="lighthouse">lighthouse</option>
+        <option value="snowflake">snowflake</option>
+        <option value="castle">castle</option>
+        <option value="paintbrush">paintbrush</option>
+        <option value="pool">pool</option>
+        <option value="chair">chair</option>
+        <option value="bee">bee</option>
+        <option value="sheep">sheep</option>
+        <option value="helicopter">helicopter</option>
+        <option value="power_outlet">power outlet</option>
+        <option value="stove">stove</option>
+        <option value="passport">passport</option>
+        <option value="ambulance">ambulance</option>
+        <option value="catbus">catbus</option>
+        <option value="hand">hand</option>
+        <option value="owl">owl</option>
+        <option value="barn">barn</option>
+        <option value="lionsheep">lionsheep</option>
+        <option value="monapassport">monapassport</option>
+        <option value="fan">fan</option>
+        <option value="fire_hydrant">fire hydrant</option>
+        <option value="dogbunny">dogbunny</option>
+        <option value="bear">bear</option>
+        <option value="lantern">lantern</option>
+        <option value="map">map</option>
+        <option value="rhinoceros">rhinoceros</option>
+        <option value="hedgeberry">hedgeberry</option>
+        <option value="key">key</option>
+        <option value="sandwich">sandwich</option>
+        <option value="alarm_clock">alarm clock</option>
+        <option value="rabbit">rabbit</option>
+        <option value="elephant">elephant</option>
+        <option value="rabbitturtle">rabbitturtle</option>
+        <option value="crabchair">crabchair</option>
+        <option value="radioface">radioface</option>
+        <option value="frog">frog</option>
+        <option value="pigsheep">pigsheep</option>
+        <option value="squirrel">squirrel</option>
+        <option value="book">book</option>
+        <option value="roller_coaster">roller coaster</option>
+        <option value="frogsofa">frogsofa</option>
+        <option value="bulldozer">bulldozer</option>
+        <option value="lobster">lobster</option>
+        <option value="dolphin">dolphin</option>
+        <option value="rifle">rifle</option>
+        <option value="monkey">monkey</option>
+        <option value="eye">eye</option>
+        <option value="whale">whale</option>
+        <option value="crabrabbitfacepig">crabrabbitfacepig</option>
+        <option value="yogabicycle">yogabicycle</option>
+        <option value="kangaroo">kangaroo</option>
+        <option value="penguin">penguin</option>
+        <option value="steak">steak</option>
+        <option value="dog">dog</option>
+        <option value="mermaid">mermaid</option>
+        <option value="tractor">tractor</option>
+        <option value="brain">brain</option>
+        <option value="everything">everything</option>
+    </select> -->
+</body>
+
+</html>
