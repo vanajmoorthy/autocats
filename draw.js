@@ -20,7 +20,6 @@ function startDrawing() {
 function sketchRNNStart() {
 	personDrawing = false;
 
-	// Perform RDP Line Simplication
 	const rdpPoints = [];
 	const total = seedPoints.length;
 	const start = seedPoints[0];
@@ -29,7 +28,6 @@ function sketchRNNStart() {
 	rdp(0, total - 1, seedPoints, rdpPoints);
 	rdpPoints.push(end);
 
-	// Drawing simplified path
 	background(255);
 	stroke(0);
 	strokeWeight(4);
@@ -44,7 +42,6 @@ function sketchRNNStart() {
 	y = rdpPoints[rdpPoints.length - 1].y;
 
 	seedPath = [];
-	// Converting to SketchRNN states
 	for (let i = 1; i < rdpPoints.length; i++) {
 		let strokePath = {
 			dx: rdpPoints[i].x - rdpPoints[i - 1].x,
